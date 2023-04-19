@@ -23,7 +23,7 @@ jobs:
         npm install -g @angular/cli
 
     - name: Build
-      run: ng build --prod
+      run: ng build
 
     - name: Test
       run: ng test --watch=false --browsers=ChromeHeadless
