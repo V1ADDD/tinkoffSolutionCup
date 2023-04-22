@@ -1,0 +1,11 @@
+<div class="signup-container">
+  <form #signUpForm="ngForm" (ngSubmit)="onSubmit(signUpForm)">
+    <h1>Регистрация</h1>
+    <input type="email" name="email" placeholder="Ваша почта..." required ngModel>
+    <input type="text" name="fio" placeholder="Ваши ФИО..." required ngModel>
+    <input type="password" name="password" placeholder="Ваш пароль..." required ngModel>
+    <input type="password" name="password2" placeholder="Повторите Ваш пароль..." required ngModel>
+    <button type="submit">Зарегистрироваться</button>
+    <a href="/signin">Уже есть аккаунт?</a>
+  </form>
+</div>

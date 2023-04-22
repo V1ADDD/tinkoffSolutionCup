@@ -5,6 +5,10 @@
   padding: 0;
 }
 
+h1 {
+  margin-bottom: 36px;
+}
+
 .main-wrapper {
   display: table;
   position: absolute;
