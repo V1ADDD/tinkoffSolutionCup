@@ -1,13 +1,14 @@
 <div class="sidenav">
-  <a href="/spendings">Расходы</a>
-  <a href="/categories">Категории</a>
-  <a href="/newspending">Новый расход</a>
-  <a href="/profile">Профиль</a>
+  <a href="/tinkoffSolutionCup/spendings">Расходы</a>
+  <a href="/tinkoffSolutionCup/categories">Категории</a>
+  <a href="/tinkoffSolutionCup/newspending">Новый расход</a>
+  <a href="/tinkoffSolutionCup/profile">Профиль</a>
 </div>
 
+<h1 style="text-align: center">Расходы</h1>
 <div class="main">
   <div class="history">
-    <select name="categoryModel" (change)="updateCategories()" [(ngModel)]="categoryModel">
+    <select name="categoryModel" [(ngModel)]="categoryModel">
       <option *ngFor="let category of categories" value="{{category.id}}">{{category.name}}</option>
     </select>
     <div class="history-list">
@@ -30,6 +31,24 @@
     </div>
   </div>
   <div class="hists">
-
+    <div class="histogram">
+      <div class="bar" *ngFor="let spending of spendings.slice(-8)" style="height:{{(spending.spent/spentAll)*100}}%">
+        <div class="value">{{spending.spent}}</div>
+      </div>
+    </div>
+    <div class="months">
+      <div *ngFor="let date of datesOfSpends.slice(-8)" class="month">{{date}}</div>
+    </div>
+    <div class="summ-rashodov">
+      <h2>Счет суммы расходов</h2>
+      <form #formCountSpends="ngForm" (ngSubmit)="onSubmit(formCountSpends)">
+        <p>От</p>
+        <input type="date" name="from" required ngModel>
+        <p>До</p>
+        <input type="date" name="to" required ngModel>
+        <button type="submit">Рассчитать!</button>
+      </form>
+    </div>
   </div>
+
 </div>
