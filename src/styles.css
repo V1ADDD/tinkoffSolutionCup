@@ -1,4 +1,14 @@
 /* You can add global styles to this file, and also import other style files */
+@font-face {
+    font-family: 'Intro';
+    src: url("./assets/fonts/Intro.otf");
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+  background-color: rgba(218, 218, 218, 0.64);
+}
 
 @media screen and (max-width: 1020px) {
 }

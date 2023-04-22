@@ -1,0 +1,38 @@
+* {
+  font-family: Intro;
+  color: #565656;
+  margin: 0;
+  padding: 0;
+}
+
+.main-wrapper {
+  display: table;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+}
+
+a {
+  display: block;
+  border: 1px transparent solid;
+  border-radius: 6px;
+  width: 300px;
+  padding: 10px;
+  background-color: rgba(255, 255, 0, 0.83);
+  margin: 10px auto;
+  text-decoration: none;
+  transition: all 1s ease-in-out;
+}
+
+a:hover {
+  border-color: #565656;
+  width: 400px;
+}
+
+.main-container {
+  display: table-cell;
+  vertical-align: middle;
+  text-align: center;
+}
