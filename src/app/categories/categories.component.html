@@ -1,1 +1,14 @@
-<p>categories works!</p>
+<div class="sidenav">
+  <a href="/spendings">Расходы</a>
+  <a href="/categories">Категории</a>
+  <a href="/newspending">Новый расход</a>
+  <a href="/profile">Профиль</a>
+</div>
+
+<div class="main">
+  <form #formCategory="ngForm" (ngSubmit)="onSubmit(formCategory)">
+    <input type="text" name="category" placeholder="Введите название новой категории..." required ngModel>
+    <input type="text" name="infoCategory" placeholder="Введите описание..." required ngModel>
+    <button type="submit">Добавить</button>
+  </form>
+</div>

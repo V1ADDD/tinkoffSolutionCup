@@ -1,1 +1,17 @@
-<p>new-spending works!</p>
+<div class="sidenav">
+  <a href="/spendings">Расходы</a>
+  <a href="/categories">Категории</a>
+  <a href="/newspending">Новый расход</a>
+  <a href="/profile">Профиль</a>
+</div>
+
+<div class="main">
+  <form #formCategory="ngForm" (ngSubmit)="onSubmit(formCategory)">
+    <select name="category" ngModel>
+      <option *ngFor="let category of categories" value="{{category.id}}">{{category.name}}</option>
+    </select>
+    <input type="number" name="summ" placeholder="Введите сумму..." required ngModel>
+    <input type="date" name="dateSpent" placeholder="Введите дату..." required ngModel>
+    <button type="submit">Добавить</button>
+  </form>
+</div>

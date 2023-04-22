@@ -1,1 +1,35 @@
-<p>spendings works!</p>
+<div class="sidenav">
+  <a href="/spendings">Расходы</a>
+  <a href="/categories">Категории</a>
+  <a href="/newspending">Новый расход</a>
+  <a href="/profile">Профиль</a>
+</div>
+
+<div class="main">
+  <div class="history">
+    <select name="categoryModel" (change)="updateCategories()" [(ngModel)]="categoryModel">
+      <option *ngFor="let category of categories" value="{{category.id}}">{{category.name}}</option>
+    </select>
+    <div class="history-list">
+      <ng-container *ngFor="let spending of spendings">
+        <ng-container *ngIf="categoryModel">
+          <div *ngIf="spending.category == categoryModel">
+            <p>{{categories[spending.category].name}}</p>
+            <p>{{spending.spent}}</p>
+            <p>{{spending.date}}</p>
+          </div>
+        </ng-container>
+        <ng-container *ngIf="!categoryModel">
+          <div>
+            <p>{{categories[spending.category].name}}</p>
+            <p>{{spending.spent}}</p>
+            <p>{{spending.date}}</p>
+          </div>
+        </ng-container>
+      </ng-container>
+    </div>
+  </div>
+  <div class="hists">
+
+  </div>
+</div>

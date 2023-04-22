@@ -1,4 +1,12 @@
 import { Component } from '@angular/core';
+import {NgForm} from "@angular/forms";
+
+type Category = {
+    id: number;
+    user: string;
+    name: string;
+    info: string;
+}
 
 @Component({
   selector: 'app-new-spending',
@@ -6,5 +14,25 @@ import { Component } from '@angular/core';
   styleUrls: ['./new-spending.component.css']
 })
 export class NewSpendingComponent {
+  categories: Category[];
+  constructor() {
+    const categories: Category[] = JSON.parse(<string>localStorage.getItem("categories"));
+    this.categories = categories.filter((x: Category) => x.user == localStorage.getItem("currentUser"));
+  }
 
+  onSubmit(form: NgForm) {
+    if (form.valid && form.value.category) {
+      const spendings = JSON.parse(<string>localStorage.getItem("spendings"));
+      spendings.push({
+        "id": spendings[spendings.length-1].id + 1,
+        "user": localStorage.getItem("currentUser"),
+        "category": form.value.category,
+        "spent": form.value.summ,
+        "date": form.value.dateSpent
+      });
+      const spendingsJson = JSON.stringify(spendings);
+      localStorage.setItem("spendings", spendingsJson);
+      form.resetForm();
+    }
+  }
 }

@@ -1,0 +1,71 @@
+* {
+  font-family: Intro;
+  color: #565656;
+  margin: 0;
+  padding: 0;
+}
+
+.sidenav {
+    height: 100%;
+    width: 270px;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #565656;
+    overflow-x: hidden;
+    padding-top: 20px;
+}
+
+.sidenav a {
+    padding: 6px 8px 6px 16px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+}
+
+.sidenav a:hover {
+    color: #f1f1f1;
+}
+
+.main {
+    margin-left: 280px;
+    padding: 20px 10px;
+}
+
+select, input {
+  display: block;
+  border: 1px transparent solid;
+  border-radius: 6px;
+  padding: 10px;
+  background-color: white;
+  margin: 10px;
+  text-decoration: none;
+  transition: all 1s ease-in-out;
+}
+
+input {
+  width: 280px;
+}
+select {
+  width: 300px;
+}
+
+button {
+  cursor: pointer;
+  display: block;
+  border: 1px transparent solid;
+  border-radius: 6px;
+  width: 300px;
+  padding: 10px;
+  background-color: rgba(255, 255, 0, 0.83);
+  margin: 10px;
+  text-decoration: none;
+  transition: all 1s ease-in-out;
+}
+
+button:hover {
+  border-color: #565656;
+  width: 400px;
+}

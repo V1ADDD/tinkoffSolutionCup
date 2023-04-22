@@ -21,7 +21,6 @@ export class SignUpComponent {
         })
         let usersJson = JSON.stringify(users);
         localStorage.setItem("users", usersJson);
-        console.log(<string>localStorage.getItem("users"));
         form.resetForm();
       }
     }
