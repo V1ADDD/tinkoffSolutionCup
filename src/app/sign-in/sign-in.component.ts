@@ -25,7 +25,7 @@ export class SignInComponent {
       if (user) {
         if (user.password === form.value.password) {
           localStorage.setItem("currentUser", user.id);
-          this.router.navigate(['/tinkoffSolutionCup/profile'])
+          this.router.navigate(['/profile'])
         }
       }
     }

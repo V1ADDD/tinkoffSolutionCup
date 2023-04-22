@@ -15,32 +15,32 @@ const routes: Routes = [
     component: MainComponent
   },
   {
-    path: 'tinkoffSolutionCup/signup',
+    path: 'signup',
     title: 'Страничка регистрации',
     component: SignUpComponent
   },
   {
-    path: 'tinkoffSolutionCup/signin',
+    path: 'signin',
     title: 'Страничка входа',
     component: SignInComponent
   },
   {
-    path: 'tinkoffSolutionCup/profile',
+    path: 'profile',
     title: 'Ваш аккаунт',
     component: ProfileComponent
   },
   {
-    path: 'tinkoffSolutionCup/spendings',
+    path: 'spendings',
     title: 'Ваши расходы',
     component: SpendingsComponent
   },
   {
-    path: 'tinkoffSolutionCup/newspending',
+    path: 'newspending',
     title: 'Добавить расход',
     component: NewSpendingComponent
   },
   {
-    path: 'tinkoffSolutionCup/categories',
+    path: 'categories',
     title: 'Добавить категорию расходов',
     component: CategoriesComponent
   },
