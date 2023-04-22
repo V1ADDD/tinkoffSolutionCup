@@ -2,6 +2,10 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.1.6.
 
+## Link
+
+https://v1addd.github.io/tinkoffSolutionCup/
+
 ## Set up
 
 Install Node.js: Angular requires Node.js and npm to be installed on your machine. You can download and install them from the Node.js website.
