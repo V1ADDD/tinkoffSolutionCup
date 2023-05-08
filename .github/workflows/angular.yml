@@ -23,7 +23,7 @@ jobs:
         npm install -g @angular/cli
 
     - name: Build
-      run: ng build --prod --base-href /tinkoffSolutionCup/
+      run: ng build --base-href /tinkoffSolutionCup/
 
     - name: Deploy
       uses: JamesIves/github-pages-deploy-action@4.1.4
