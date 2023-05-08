@@ -33,3 +33,35 @@
     margin-left: 280px;
     padding: 20px 10px;
 }
+
+button {
+  cursor: pointer;
+  display: block;
+  border: 1px transparent solid;
+  border-radius: 6px;
+  width: 300px;
+  padding: 10px;
+  background-color: rgba(255, 255, 0, 0.83);
+  margin-block: 10px;
+  text-decoration: none;
+  transition: all 1s ease-in-out;
+}
+
+button:hover {
+  border-color: #565656;
+}
+
+.profile-pic {
+  overflow: hidden;
+  width: 200px;
+  aspect-ratio: 1;
+  border: yellow 3px solid;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.profile-info {
+  display: inline-block;
+  vertical-align: top;
+  margin-left: 2rem;
+}

@@ -5,50 +5,60 @@
   <a href="/profile">Профиль</a>
 </div>
 
-<h1 style="text-align: center">Расходы</h1>
 <div class="main">
-  <div class="history">
-    <select name="categoryModel" [(ngModel)]="categoryModel">
-      <option *ngFor="let category of categories" value="{{category.id}}">{{category.name}}</option>
-    </select>
-    <div class="history-list">
-      <ng-container *ngFor="let spending of spendings">
-        <ng-container *ngIf="categoryModel">
-          <div *ngIf="spending.category == categoryModel">
-            <p>{{categories[spending.category].name}}</p>
-            <p>{{spending.spent}}</p>
-            <p>{{spending.date}}</p>
-          </div>
-        </ng-container>
-        <ng-container *ngIf="!categoryModel">
-          <div>
-            <p>{{categories[spending.category].name}}</p>
-            <p>{{spending.spent}}</p>
-            <p>{{spending.date}}</p>
-          </div>
-        </ng-container>
-      </ng-container>
-    </div>
-  </div>
+  <h1>Расходы</h1>
   <div class="hists">
-    <div class="histogram">
-      <div class="bar" *ngFor="let spending of spendings.slice(-8)" style="height:{{(spending.spent/spentAll)*100}}%">
-        <div class="value">{{spending.spent}}</div>
+    <div>
+      <canvas #doughnutCanvas style="cursor: pointer; margin: 10%"></canvas>
+    </div>
+    <div>
+      <canvas #lineCanvas style="cursor: pointer; margin: 5%"></canvas>
+      <div style="margin: 5%;">
+        <h2>Счет суммы расходов</h2>
+        <form #formCountSpends="ngForm" (ngSubmit)="onSubmit(formCountSpends)">
+          <p>От</p>
+          <input type="date" name="from" required ngModel>
+          <p>До</p>
+          <input type="date" name="to" required ngModel>
+          <button type="submit">Рассчитать!</button>
+        </form>
       </div>
     </div>
-    <div class="months">
-      <div *ngFor="let date of datesOfSpends.slice(-8)" class="month">{{date}}</div>
+  </div>
+  <div class="history">
+    <div style="display:grid;grid-template-columns: 1fr 1fr 1fr;grid-gap: 1rem;">
+      <select name="categoryModel" [(ngModel)]="categoryModel">
+        <option *ngFor="let category of categories" value="{{category.id}}">{{category.name}}</option>
+      </select>
+      <input max="{{toDateModel}}" type="date" name="fromDateModel"
+             [(ngModel)]="fromDateModel">
+      <input type="date" min="{{ fromDateModel }}" name="toDateModel"
+             [(ngModel)]="toDateModel">
     </div>
-    <div class="summ-rashodov">
-      <h2>Счет суммы расходов</h2>
-      <form #formCountSpends="ngForm" (ngSubmit)="onSubmit(formCountSpends)">
-        <p>От</p>
-        <input type="date" name="from" required ngModel>
-        <p>До</p>
-        <input type="date" name="to" required ngModel>
-        <button type="submit">Рассчитать!</button>
-      </form>
+    <div class="history-list">
+      <table>
+        <thead>
+          <tr>
+            <th>Категория</th>
+            <th>Описание</th>
+            <th>Потрачено</th>
+            <th>Дата</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let spending of spendings">
+            <ng-container *ngIf="(!categoryModel || categoryModel==spending.category) && (!toDateModel
+        || spending.date<=toDateModel) && (!fromDateModel || spending.date>=fromDateModel)">
+              <td>{{categories[spending.category].name}}</td>
+              <td>{{categories[spending.category].info}}</td>
+              <td>{{spending.spent}}</td>
+              <td>{{spending.date}}</td>
+            </ng-container>
+          </tr>
+        </tbody>
+      </table>
+
+      <button (click)="exportToCsv()">Export to CSV</button>
     </div>
   </div>
-
 </div>

@@ -36,7 +36,6 @@ button {
 
 button:hover {
   border-color: #565656;
-  width: 400px;
 }
 
 .signin-container {

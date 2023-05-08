@@ -17,6 +17,9 @@ type User = {
 })
 export class SignInComponent {
   constructor(private router: Router) {
+    if (localStorage.getItem("currentUser")) {
+      this.router.navigate(['/profile'])
+    }
   }
   onSubmit(form: NgForm) {
     if (form.valid) {

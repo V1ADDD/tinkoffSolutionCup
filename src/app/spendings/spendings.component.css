@@ -32,8 +32,6 @@
 .main {
   margin-left: 280px;
   padding: 20px 10px;
-  display: grid;
-  grid-template-columns: 1fr 3fr;
 }
 
 h2 {
@@ -56,92 +54,48 @@ button {
   display: block;
   border: 1px transparent solid;
   border-radius: 6px;
-  width: 300px;
+  width: 100%;
   padding: 10px;
   background-color: rgba(255, 255, 0, 0.83);
   text-decoration: none;
   transition: all 1s ease-in-out;
 }
 
+.hists {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 1rem;
+}
+
 button:hover {
   border-color: #565656;
-  width: 325px;
 }
 
-input {
-  width: 280px;
-}
-
-select {
-  width: 300px;
+input[name='to'], input[name='from'] {
+  width: calc(100% - 20px);
 }
 
 .history-list {
-  margin-top: 24px;
   padding: 10px;
   background-color: white;
   border-radius: 6px;
 }
 
-.history-list > div {
+.history-list > table {
+  width: 100%;
+  margin-inline: auto;
+  text-align: start;
   margin-bottom: 10px;
-  border: 1px #565656 solid;
   padding: 7px;
   border-radius: 7px;
-  cursor: pointer;
   transition: border-radius 1s ease-in-out;
 }
 
-.history-list > div:hover {
-  border-radius: 0;
+thead {
+  font-size: 20px;
 }
 
-.histogram {
-  margin-top: 32px;
-  width: 95%;
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-end;
-  height: 250px;
-  background-color: transparent;
-  margin-bottom: 20px;
+th {
+  padding-bottom: 5px;
+  text-align: start;
 }
-
-.bar {
-  width: 50px;
-  margin: 0 auto;
-  background-color: transparent;
-  border: 1px solid #565656;
-  position: relative;
-  cursor: pointer;
-  transition: all 1s ease-in-out;
-}
-
-.value {
-  position: absolute;
-  top: -20px;
-  left: 0;
-  width: 100%;
-  text-align: center;
-  font-size: 14px;
-  font-weight: bold;
-}
-
-.months {
-  width: 95%;
-  display: flex;
-  justify-content: space-between;
-}
-
-.month {
-  margin: 0 auto;
-  width: 30px;
-  text-align: center;
-  font-size: 14px;
-  font-weight: bold;
-}
-
-.summ-rashodov {
-  margin: 32px 32px 32px 256px;
-}
-
