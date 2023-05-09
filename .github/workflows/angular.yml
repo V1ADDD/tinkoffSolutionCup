@@ -29,5 +29,5 @@ jobs:
       uses: JamesIves/github-pages-deploy-action@4.1.4
       with:
         branch: gh-pages
-        folder: dist/application
+        folder: dist/tinkoffSolutionCup
         token: ${{ secrets.ACCESS_TOKEN }}
