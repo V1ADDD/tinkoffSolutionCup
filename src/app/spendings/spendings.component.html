@@ -41,7 +41,7 @@
     </div>
   </div>
   <div class="history">
-    <div style="display:grid;grid-template-columns: 1fr 1fr 1fr;grid-gap: 1rem;">
+    <div>
       <select name="categoryModel" [(ngModel)]="categoryModel">
         <option *ngFor="let category of categories" value="{{category.id}}">{{category.name}}</option>
       </select>
