@@ -53,11 +53,11 @@ export class SpendingsComponent implements AfterViewInit {
     const spendings: Spending[] = JSON.parse(<string>localStorage.getItem("spendings"));
     this.spendings = spendings.filter((x: Spending) => x.user == localStorage.getItem("currentUser"));
     let currentDate: Date = new Date();
-    for (let category of categories) {
+    for (let category of this.categories) {
       this.listCategories.push(category.name);
       this.listCategoriesValues.push(0);
     }
-    for (let spending of spendings) {
+    for (let spending of this.spendings) {
       if (spending.date.slice(0,4) == currentDate.getFullYear().toString()) {
         // @ts-ignore
         this.listSpendByMonth[spending.date.slice(5, 7).split('0')[1]|spending.date.slice(5, 7).split('0')[0]] += spending.spent;
