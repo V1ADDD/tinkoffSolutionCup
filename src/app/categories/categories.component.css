@@ -26,14 +26,12 @@
     display: block;
 }
 
-/* When you mouse over the navigation links, change their color */
 .sidenav a:hover {
     color: #f1f1f1;
 }
 
-/* Style page content */
 .main {
-    margin-left: 280px; /* Same as the width of the sidebar */
+    margin-left: 280px;
     padding: 20px 10px;
 }
 
@@ -64,4 +62,10 @@ button {
 
 button:hover {
   border-color: #565656;
+}
+
+@media screen and (max-width: 1020px) {
+  .main {
+    margin-left: 0;
+  }
 }

@@ -68,3 +68,9 @@ button {
 button:hover {
   border-color: #565656;
 }
+
+@media screen and (max-width: 1020px) {
+  .main {
+    margin-left: 0;
+  }
+}
